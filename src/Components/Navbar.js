@@ -1,16 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
-export const Navbar = () => {
+import styles from './Navbar.module.css';
+import logo from '../img/logo_jyf.png';
+const Navbar = () => {
   return (
-    <nav class="navegacion">
-        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Inicio</a>
-        <a class="navegacion__enlace" href="contacto.html">Contacto</a>
-        <a class="navegacion__enlace" href="noticias.html">Noticias</a>
-        <a class="navegacion__enlace" href="nosotros.html">¿Quienes somos?</a>
-        <a class="navegacion__enlace" href="catalago.html">Catalago</a>
-        <a class="navegacion__enlace" href="recetas.html">Recetas</a>       
+    <div>
+    <header className={styles.header}>
+        <Link to='/'> <img className={styles.header__logo} src={logo} alt="logotipo"/></Link>
+    </header>
+    <nav className={styles.navegacion}>
+        <Link to='/'className={styles.navegacion__enlace}>Inicio</Link>
+        <Link to='/contacto' className={styles.navegacion__enlace} >Contacto</Link>
+        <Link to='/noticia' className={styles.navegacion__enlace} >Noticias</Link>
+        <Link to='/nosotros' className={styles.navegacion__enlace} >¿Quienes somos?</Link>
+        <Link to='/catalogo' className={styles.navegacion__enlace} >Catalago</Link>
+        <Link to='/recetas' className={styles.navegacion__enlace} >Recetas</Link>       
     </nav>
-    
+    </div>
   )
 }
+export default Navbar;
