@@ -1,35 +1,57 @@
-import React from 'react'
-import { styles } from './Home.module.css';
+import React, {useState} from 'react'
+import  styles  from './Home.module.css';
 const Home = () => {
-    const handleOnMouseOver = (event) => {
-        const element_id = event.target.id;
-        console.log(element_id);
-      };
+  const sliderImages = [
+    {img:'slider1_index.png'},
+    {img:'slider2_index.png'},
+    {img:'slider3_index.png'},
+    {img:'slider4_index.png'},
+  ]  
+  const btnLeftStyle = {
+    left: "1rem"
+  }
+  const btnRightStyle = {
+    right: "1rem"
+  }
+  const [currentIndex, SetCurrentIndex] = useState(0);
+  const Anterior = () =>{
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? sliderImages.length - 1 : currentIndex - 1;
+    SetCurrentIndex(newIndex);
+  }
+  const Siguiente = () => {
+    const isLastSlide = currentIndex === sliderImages.length-1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    SetCurrentIndex(newIndex);
+  }
+
   return (
     <>
-    <section class="contenedor__slider">
-        <div class="slider" id="slider">
-
-            <div class="slider__section">
-                <img src="img/slider1_index.png" alt="slider1" className="slider__img cambio_img1"/>
+    <section className={styles.contenedor__slider}>
+        <div className={styles.slider}>
+            {/* <div class="slider__section">
+                <img  src={sliderImages[img1]} alt="slider1" className="slider__img cambio_img1"/>
             </div>
 
             <div class="slider__section">
-                <img src="img/slider2_index.jpg" alt="slider2" className="slider__img cambio_img2"/>
+                <img src={sliderImages[img2]} alt="slider2" className="slider__img cambio_img2"/>
             </div>
 
             <div class="slider__section">
-                <img src="img/slider3_index.jpg" alt="slider3" className="slider__img cambio_img3"/>
+                <img src={sliderImages[img3]} alt="slider3" className="slider__img cambio_img3"/>
             </div>
     
             <div class="slider__section">
-                <img src="img/slider4_index.jpg" alt="slider4" className="slider__img cambio_img4"/>
+                <img src={sliderImages[img4]} alt="slider4" className="slider__img cambio_img4"/>
+            </div> */}
+            <div className={styles.slider__section}>
+                <img src={`../img/${sliderImages[currentIndex].img}`} alt={`img${currentIndex+1}`} className={styles.slider__img}/>
             </div>
         </div>
-        <div class="slider__btn slider__btn--right" id="btn__right">&#62</div>
-        <div class="slider__btn slider__btn--left" id="btn__left">&#60</div>
+        <div className={styles.slider__btn} style={btnRightStyle} onClick={Siguiente}>&#62</div>
+        <div className={styles.slider__btn} style={btnLeftStyle} onClick={Anterior}>&#60</div>
     </section>
-    <section class="contenedor__slider_responsive">
+    {/* <section class="contenedor__slider_responsive">
         <div class="slider_responsive" id="slider_responsive">
 
             <div class="slider__section_responsive">
@@ -288,7 +310,7 @@ const Home = () => {
             </div>
         </div>
     </div>
-    </footer>
+    </footer> */}
     </>
   )
 }

@@ -4,20 +4,17 @@ import Catalogo from "../src/Pages/Catalogo";
 import Home from "../src/Pages/Home";
 function App() {
   return (
-    <>
       <Router>
-        <Navegador>
+        <Navegador/>
           <Routes> 
               <Route path='/' element={<Home/>}/>
-              <Route path='/contacto'  element={<div>Contacto</div>}/>
-              <Route path='/noticia'  element={<div>Noticias</div>}/>                 
-              <Route path='/nosotros'  element={<div>Quienes somos</div>}/>  
-              <Route path='/catalogo'  element={<Catalogo/>}/> 
-              <Route path='/recetas'  element={<div>Recetas</div>}/>  
+              <Route path='/contacto'  element={<Home/>}/>
+              <Route path='/noticia'  element={<Home/>}/>                 
+              <Route path='/nosotros'  element={<Home/>}/>  
+              <Route path='/catalogo'  element={<Home/>}/> 
+              <Route path='/recetas'  element={<Home/>}/>  
           </Routes> 
-        </Navegador> 
       </Router>
-    </>
   );
 }
 

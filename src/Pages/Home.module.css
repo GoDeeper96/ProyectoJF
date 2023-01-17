@@ -42,13 +42,13 @@
     transition: background .6s ease;
 }
 
-.slider__btn--left{
+/* .slider__btn__left{
     left: 1rem;
 }
 
-.slider__btn--right{
+.slider__btn__right{
     right: 1rem;
-}
+} */
 
 /*===Slider_RESPONSIVE===*/
 .contenedor__slider_responsive{
