@@ -1,25 +1,29 @@
 import React from 'react'
-
+import { styles } from './Home.module.css';
 const Home = () => {
+    const handleOnMouseOver = (event) => {
+        const element_id = event.target.id;
+        console.log(element_id);
+      };
   return (
     <>
     <section class="contenedor__slider">
         <div class="slider" id="slider">
 
             <div class="slider__section">
-                <img src="img/slider1_index.png" alt="slider1" class="slider__img cambio_img1"/>
+                <img src="img/slider1_index.png" alt="slider1" className="slider__img cambio_img1"/>
             </div>
 
             <div class="slider__section">
-                <img src="img/slider2_index.jpg" alt="slider2" class="slider__img cambio_img2"/>
+                <img src="img/slider2_index.jpg" alt="slider2" className="slider__img cambio_img2"/>
             </div>
 
             <div class="slider__section">
-                <img src="img/slider3_index.jpg" alt="slider3" class="slider__img cambio_img3"/>
+                <img src="img/slider3_index.jpg" alt="slider3" className="slider__img cambio_img3"/>
             </div>
     
             <div class="slider__section">
-                <img src="img/slider4_index.jpg" alt="slider4" class="slider__img cambio_img4"/>
+                <img src="img/slider4_index.jpg" alt="slider4" className="slider__img cambio_img4"/>
             </div>
         </div>
         <div class="slider__btn slider__btn--right" id="btn__right">&#62</div>
