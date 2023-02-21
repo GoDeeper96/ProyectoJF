@@ -1,56 +1,157 @@
-import React, {useState} from 'react'
+import React, {useState,useRef, useEffect,useCallback} from 'react'
 import  styles  from './Home.module.css';
+import slider1 from '../img/slider1_index.png'
+import slider2 from '../img/slider2_index.jpg'
+import slider3 from '../img/slider3_index.jpg'
+import slider4 from '../img/slider4_index.jpg'
+import sliderServicios1 from '../img/slider_servicios1.JPG'
+import sliderServicios2 from '../img/slider_servicios2.JPG'
+import sliderServicios3 from '../img/slider_servicios3.JPG'
+import sliderServicios4 from '../img/slider_servicios4.JPG'
+import sliderServicios5 from '../img/slider_servicios5.JPG'
+import banner1 from '../img/banner1.jpg'
+import banner2 from '../img/banner2.jpg'
+import banner3 from '../img/banner3.jpg'
+import banner4 from '../img/banner4.jpg'
+import banner5 from '../img/banner5.jpg'
+import banner6 from '../img/banner6.jpg'
+import banner7 from '../img/banner7.jpg'
+import banner8 from '../img/banner8.jpg'
+import banner9 from '../img/banner9.jpg'
 const Home = () => {
+  const banners = [
+    {img:banner1},
+    {img:banner2},
+    {img:banner3},
+    {img:banner4},
+    {img:banner5},
+    {img:banner6},
+    {img:banner7},
+    {img:banner8},
+    {img:banner9},
+  ]
   const sliderImages = [
-    {img:'slider1_index.png'},
-    {img:'slider2_index.png'},
-    {img:'slider3_index.png'},
-    {img:'slider4_index.png'},
+    {img:slider1},
+    {img:slider2},
+    {img:slider3},
+    {img:slider4},
   ]  
+  const sliderServicios = [
+    {img:sliderServicios1},
+    {img:sliderServicios2},
+    {img:sliderServicios3},
+    {img:sliderServicios4},
+    {img:sliderServicios5},
+  ]
   const btnLeftStyle = {
     left: "1rem"
   }
   const btnRightStyle = {
     right: "1rem"
   }
+  const transition1 ={
+    transition:"all 0.5s"
+  }
+  const timeRef = useRef(null);
   const [currentIndex, SetCurrentIndex] = useState(0);
+  const [currentSliderStyle,SetSliderStyle] = useState({})
   const Anterior = () =>{
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? sliderImages.length - 1 : currentIndex - 1;
     SetCurrentIndex(newIndex);
   }
-  const Siguiente = () => {
+  const Siguiente = useCallback(() => {
     const isLastSlide = currentIndex === sliderImages.length-1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     SetCurrentIndex(newIndex);
-  }
 
+  },[currentIndex,sliderImages])
+  const rightArrow = '>'
+  const leftArrow = '<'
+  useEffect(()=>{
+    if(timeRef.current){
+        clearTimeout(timeRef.current);
+    }
+    timeRef.current = setTimeout(()=>{
+        Siguiente();
+        // SetSliderStyle(transition1)
+        
+    },5000)
+    return () => clearTimeout(timeRef.current);
+  },[Siguiente])
   return (
     <>
     <section className={styles.contenedor__slider}>
         <div className={styles.slider}>
-            {/* <div class="slider__section">
-                <img  src={sliderImages[img1]} alt="slider1" className="slider__img cambio_img1"/>
-            </div>
-
-            <div class="slider__section">
-                <img src={sliderImages[img2]} alt="slider2" className="slider__img cambio_img2"/>
-            </div>
-
-            <div class="slider__section">
-                <img src={sliderImages[img3]} alt="slider3" className="slider__img cambio_img3"/>
-            </div>
-    
-            <div class="slider__section">
-                <img src={sliderImages[img4]} alt="slider4" className="slider__img cambio_img4"/>
-            </div> */}
             <div className={styles.slider__section}>
-                <img src={`../img/${sliderImages[currentIndex].img}`} alt={`img${currentIndex+1}`} className={styles.slider__img}/>
+                <img src={sliderImages[currentIndex].img} alt={`img${currentIndex+1}`} className={styles.slider__img}/>
             </div>
         </div>
-        <div className={styles.slider__btn} style={btnRightStyle} onClick={Siguiente}>&#62</div>
-        <div className={styles.slider__btn} style={btnLeftStyle} onClick={Anterior}>&#60</div>
+        <div className={styles.slider__btn} style={btnRightStyle} onClick={Siguiente}>{rightArrow}</div>
+        <div className={styles.slider__btn} style={btnLeftStyle} onClick={Anterior}>{leftArrow}</div>
     </section>
+            <div className={styles.slider__section_servicios}>
+                <img src={sliderServicios[currentIndex].img} alt={`imgServicios${currentIndex+1}`} className={styles.slider__img_servicios}/>
+            </div>
+       <div>
+       <h1>Secciones</h1>
+        <div className={styles.grid__margin_lado_bloques}>
+            <div>
+                <a href="catalago.html">
+                    <img className={styles.catalogo__imagen} src={banner1} alt="Agroindustria"/>
+                </a>
+            </div>
+             <div>
+                  <a href="catalago.html">
+                    <img className={styles.catalogo__imagen} src={banner2} alt="Cosmetica"/>
+                  </a>
+            </div>
+
+            <div>
+                <a href="catalago.html">
+                    <img className={styles.catalogo__imagen} src={banner3} alt="Co"/>
+                </a>
+             </div>
+
+             <div>
+                <a href="catalago.html">
+                    <img className={styles.catalogo__imagen} src={banner4} alt="Reciclaje"/>
+                </a>
+             </div>
+
+             <div>
+                <a href="catalago.html">
+                    <img className={styles.catalogo__imagen} src={banner5} alt="Industria textil"/>
+                </a>
+             </div>
+
+             <div>
+                <a href="catalago.html">
+                    <img className={styles.catalogo__imagen} src={banner6} alt="Minera"/>
+                </a>
+             </div>
+
+             <div>
+                <a href="catalago.html">
+                    <img className={styles.catalogo__imagen} src={banner7} alt="Producto de limpieza"/>
+                </a>
+             </div>
+
+             <div>
+                <a href="catalago.html">
+                    <img className={styles.catalogo__imagen} src={banner8} alt="Reactivos quimicos"/>
+                </a>
+             </div>
+
+             <div>
+                <a href="catalago.html">
+                    <img className={styles.catalogo__imagen} src={banner9} alt="Tratamiento de agua"/>
+                </a>
+             </div>
+
+        </div>
+       </div>
+    
     {/* <section class="contenedor__slider_responsive">
         <div class="slider_responsive" id="slider_responsive">
 
