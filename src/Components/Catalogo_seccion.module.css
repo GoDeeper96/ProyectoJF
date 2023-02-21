@@ -1,0 +1,20 @@
+/*===Catalago===*/
+.contenedor_margin_arriba_bloque{
+    
+    max-width: 120rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+.catalogo_titulo{
+    font-size: 4rem;
+}
+.catalago__imagen{
+    border-radius: 2rem;
+}
+.grid__margin_lado_bloques{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 5rem;
+}
