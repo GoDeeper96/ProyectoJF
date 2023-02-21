@@ -1,0 +1,12 @@
+.slider__section_servicios{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider__img_servicios{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
