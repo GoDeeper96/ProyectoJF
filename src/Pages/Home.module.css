@@ -3,13 +3,15 @@
 /*===Slider===*/
 .contenedor__slider{
     overflow: hidden;
-    position: absolute;
+    position: relative;
 }
 
 .slider{
-    display: flex;
+    /* display: flex;
     width: 400%;
-    margin-left: -100%;
+    margin-left: -100%; */
+    height: 100%;
+    position: relative;
 }
 
 .slider__section{
@@ -106,7 +108,7 @@
 
 .contenedor__servicios{
    overflow: hidden;
-    position: relative;
+    position: absolute;
 }
 
 .slider__servicios{
@@ -117,6 +119,8 @@
 
 .slider__section_servicios{
     width: 100%;
+    overflow: hidden;
+    position: absolute;
 }
 
 .slider__img_servicios{
@@ -191,7 +195,13 @@
     gap: 2rem;
     justify-content: center;
 }
-
+.grid__margin_lado_bloques{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 5rem;
+}
 /*===Catalago===*/
 
 .catalago__imagen{
