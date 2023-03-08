@@ -5,8 +5,9 @@ import SliderServicios from '../Components/Servicios_seccion'
 import Catalogo_seccion from '../Components/Catalogo_seccion';
 import { sliderImages } from '../Components/SlidersArrayImagenes'
 import CarouselProductos from '../Components/CarouselProductos';
+import Footer from '../Components/Footer';
 const Home = () => {
-
+  
 
   const btnLeftStyle = {
     left: "1rem"
@@ -50,6 +51,7 @@ const Home = () => {
     <SliderServicios currentIndex={currentIndex}/>
     <Catalogo_seccion/>
     <CarouselProductos currentIndex={currentIndex}/>
+    <Footer/>
     </>
   )
 }
