@@ -4,6 +4,7 @@ import Slider_imagenes from '../Components/Slider_imagenes';
 import SliderServicios from '../Components/Servicios_seccion'
 import Catalogo_seccion from '../Components/Catalogo_seccion';
 import { sliderImages } from '../Components/SlidersArrayImagenes'
+import CarouselProductos from '../Components/CarouselProductos';
 const Home = () => {
 
 
@@ -48,7 +49,7 @@ const Home = () => {
     <Slider_imagenes currentIndex={currentIndex} rightArrow={rightArrow} leftArrow={leftArrow} btnRightStyle={btnRightStyle} btnLeftStyle={btnLeftStyle} Siguiente={Siguiente} Anterior={Anterior}/>
     <SliderServicios currentIndex={currentIndex}/>
     <Catalogo_seccion/>
-       
+    <CarouselProductos currentIndex={currentIndex}/>
     </>
   )
 }
