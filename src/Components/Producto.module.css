@@ -1,0 +1,18 @@
+.si_centrar{
+    text-align: center;
+}
+.recetas__imagen{
+    max-width: 100%;
+}
+.productos__nombre{
+    font-size: 2rem;
+}
+.productos__contenido{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2081c3;
+    margin: 0;
+}
+.no-margin{
+    margin: 0;
+}
