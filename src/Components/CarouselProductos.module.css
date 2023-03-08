@@ -1,0 +1,29 @@
+.SupContainer{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.container{
+    
+    /* display: grid;
+    grid-template-columns:repeat(5, 1fr); */
+    display: flex;
+
+    gap:4rem;
+    margin-top: 5rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    touch-action: pan-y;
+    /* -webkit-transition:-webkit-transform .25s; */
+}
+.ArrowSliders{
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+.rombos
+{
+    display: flex;
+    z-index: 1;
+    justify-content: space-between;
+    gap:2rem;
+}
