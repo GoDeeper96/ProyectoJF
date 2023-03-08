@@ -1,0 +1,56 @@
+.footer{
+    background-color: #c0dcf4;
+    padding: 2rem;
+}
+.footer__grid{
+   
+    margin:2rem 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 2rem;
+
+}
+
+.footer_p{
+    font-size: 1.2rem;
+}
+
+.footer__contacto__a{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.footer__contacto__a:hover, .footer__telefonos--a:hover,.footer__telefonos--a--email:hover, .footer__redes--a:hover{
+    text-decoration: underline;
+}
+
+.footer__telefonos__h3,.footer__redes__h3{
+    text-align: left;
+    font-size: 1.6rem;
+}
+
+.footer__telefonos__a, .footer__redes--a{
+    font-size: 1.5rem;
+}
+
+.footer__telefonos__a__email{
+    font-size: 1.2rem;
+}
+
+.footer__redes__posicion{
+    font-size: 1.5rem;
+    vertical-align:top;
+}
+
+.footer__margin{
+    margin: 0 0 .5rem 0;
+}
+.Footer_margin_arriba_bloque{
+    background-color: #c0dcf4;
+    padding: 2rem;
+    margin-top: 5rem;
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
