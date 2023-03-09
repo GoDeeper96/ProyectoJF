@@ -1,7 +1,7 @@
 import React, {useState,useRef, useEffect,useCallback} from 'react'
 import Producto from './Producto'
 import styles from './CarouselProductos.module.css'
-import { sliderProductos } from './ProductosArrayImagenes'
+import { sliderProductos } from './ProductosArrayImagenes.js'
 import styled from 'styled-components'
 const StyledArrowLeft = styled.i`
 & {

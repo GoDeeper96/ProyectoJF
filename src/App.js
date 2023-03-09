@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navegador from "../src/Components/Navbar";  
-import Catalogo from "../src/Pages/Catalogo";
 import Home from "../src/Pages/Home";
 import Catalogo_seccion from "./Components/Catalogo_seccion";
 import Footer from "./Components/Footer";
