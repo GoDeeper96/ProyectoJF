@@ -5,7 +5,8 @@ import Home from "../src/Pages/Home";
 import Catalogo_seccion from "./Components/Catalogo_seccion";
 import Footer from "./Components/Footer";
 import Contacto from "./Pages/Contacto";
-import Noticias from "./Pages/Noticias"
+import Noticias from "./Pages/Noticias";
+import NoticiasPosteo from "./Pages/NoticiasPosteo";
 import Nosotros from "./Pages/Nosotros"
 import Recetas from "./Pages/Recetas"
 function App() {
@@ -15,10 +16,11 @@ function App() {
           <Routes> 
               <Route path='/' element={<Home/>}/>
               <Route path='/contacto'  element={<Contacto/>}/>
-              <Route path='/noticias'  element={<Noticias/>}/>                 
+              <Route path='/noticia'  element={<Noticias/>}/>                   
               <Route path='/nosotros'  element={<Nosotros/>}/>  
               <Route path='/catalogo'  element={<Catalogo_seccion/>}/> 
               <Route path='/recetas' element={<Recetas/>}/>
+              <Route path='/noticia-posteo'  element={<NoticiasPosteo/>}/>   
               <Route path='/politicas-de-privacidad'  element={<Home/>}/>  
               <Route path='/cambios-y-devoluciones'  element={<Home/>}/>  
               <Route path='/terminos-y-condiciones'  element={<Home/>}/>  
