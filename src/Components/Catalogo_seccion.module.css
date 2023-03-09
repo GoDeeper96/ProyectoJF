@@ -8,8 +8,8 @@
 .catalogo_titulo{
     font-size: 4rem;
 }
-.catalago__imagen{
-    border-radius: 2rem;
+.catalogo__imagen{
+    border-radius: 0.9rem;
 }
 .grid__margin_lado_bloques{
     display: grid;
