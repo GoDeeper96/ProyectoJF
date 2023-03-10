@@ -2,8 +2,17 @@ import React from 'react'
 import styles from './Nosotros.module.css'
 import MisionImagen from '../img/mision.jpg'
 import VisionImagen from '../img/vision.jpg'
+import { Link } from 'react-router-dom';
 const Nosotros = () => {
   return (
+    <div>
+        <div>
+        <nav className={styles.navegacion_historial}>
+          <Link  to='/' className={styles.navegacion_historial__enlace}>Inicio</Link>
+          <p class={styles.p__navegación_historial_no_margin}>{'>'}</p>
+          <Link  to='/nosotros' className={styles.navegacion_historial__enlace_activo}>Nosotros</Link>
+           </nav> 
+        </div>
     <main className={styles.contenedor}>
         <h1>¿Quiénes somos?</h1>
         <div className={styles.nosotros__grid}>
@@ -27,6 +36,7 @@ const Nosotros = () => {
             </div>
         </div>
     </main>
+    </div>
   )
 }
 
