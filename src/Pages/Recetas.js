@@ -6,6 +6,14 @@ import receta2 from '../img/receta2.jpg'
 import receta3 from '../img/receta3.jpg'
 const Recetas = () => {
   return (
+    <div>
+      <div>
+      <nav className={styles.navegacion_historial}>
+                 <Link  to='/' className={styles.navegacion_historial__enlace}>Inicio</Link>
+                <p class={styles.p__navegación_historial_no_margin}>{'>'}</p>
+                <Link  to='/recetas' className={styles.navegacion_historial__enlace_activo}>Recetas</Link>
+            </nav> 
+      </div>
     <main className={styles.contenedor}>
     <h1>Recetas</h1>
     <div className={styles.recetas__grid__margin_arriba_bloque_margin_lados_bloques}>
@@ -43,6 +51,7 @@ const Recetas = () => {
 
     </div>
 </main>
+</div>
 
   )
 }

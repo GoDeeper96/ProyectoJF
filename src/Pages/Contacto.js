@@ -1,7 +1,16 @@
 import React from 'react'
 import styles from './Contacto.module.css'
+import { Link } from 'react-router-dom';
 const Contacto = () => {
   return (
+    <div>
+        <div>
+            <nav className={styles.navegacion_historial}>
+                 <Link  to='/' className={styles.navegacion_historial__enlace}>Inicio</Link>
+                <p class={styles.p__navegación_historial_no_margin}>{'>'}</p>
+                <Link  to='/contacto' className={styles.navegacion_historial__enlace_activo}>Contacto</Link>
+            </nav> 
+        </div>
     <main className={styles.contenedor}>
     <h1 className={styles.si_centrar}>Contacto</h1>
 
@@ -119,7 +128,7 @@ const Contacto = () => {
 </div>
     
 </main>
-
+</div>
   )
 }
 
