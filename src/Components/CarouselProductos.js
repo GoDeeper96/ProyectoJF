@@ -1,8 +1,9 @@
 import React, {useState,useRef, useEffect,useCallback} from 'react'
 import Producto from './Producto'
 import styles from './CarouselProductos.module.css'
-import { sliderProductos } from './ProductosArrayImagenes.js'
+import { sliderProductos } from './ProductosArrayImagenes'
 import styled from 'styled-components'
+import { secciones } from './SeccionesArray';
 const StyledArrowLeft = styled.i`
 & {
   box-sizing: border-box;
@@ -224,8 +225,8 @@ useEffect(()=>{
     <h1>Productos Destacados</h1>
     
     <Container >
-     {productosDestacados.slice(0,5).map((producto)=><Producto key={producto.nombre} url={producto.img} nombre={producto.nombre} precio={producto.precio}/>)}
-
+     {productosDestacados.slice(0,5).map(producto=>
+        <Producto nombreProducto={producto.nombreProducto} url={producto.img} nombre={producto.nombre} precio={producto.precio}/>)}
     </Container>
     <div className={styles.ArrowSliders}>
     <StyledArrowLeft onClick={Anterior}/>
