@@ -4,7 +4,6 @@ import Home from "../src/Pages/Home";
 import Footer from "./Components/Footer";
 import Contacto from "./Pages/Contacto";
 import Noticias from "./Pages/Noticias";
-import NoticiasPosteo from "./Pages/NoticiasPosteo";
 import Nosotros from "./Pages/Nosotros"
 import Catalago from "./Pages/Catalogo"
 import Recetas from "./Pages/Recetas"
@@ -19,7 +18,6 @@ function App() {
               <Route path='/nosotros'  element={<Nosotros/>}/>  
               <Route path='/catalogo'  element={<Catalago/>}/> 
               <Route path='/recetas' element={<Recetas/>}/>
-              <Route path='/noticia-posteo'  element={<NoticiasPosteo/>}/>   
               <Route path='/politicas-de-privacidad'  element={<Home/>}/>  
               <Route path='/cambios-y-devoluciones'  element={<Home/>}/>  
               <Route path='/terminos-y-condiciones'  element={<Home/>}/>  
