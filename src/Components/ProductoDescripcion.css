@@ -1,0 +1,126 @@
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.no-margin{
+    margin: 0;
+}
+.margin-izquierda{
+    margin-left: 2rem;
+}
+.productos_descripcion__grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10rem;
+}
+
+.productos_descripcion_titulo{
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.productos_descripcion_subtitulo,.detalles_tamaño_texto,.adjuntos_tamaño{
+    color: var(--negro);
+    font-family: var(--fuentePrincipal);
+    text-transform: uppercase;
+}
+
+.productos_descripcion_texto{
+    font-size: 1.7rem;
+}
+
+.codigo__producto--texto{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+.productos_tamaño_texto{
+    font-size: 1.4rem;
+}
+.no-margin-abajo{
+    margin-bottom: 0;
+}
+
+.zoom__descripcion__productos{
+    transition: transform 3s;
+}
+
+.zoom__descripcion__productos:hover{
+    transform: scale(1.10);
+}
+
+.boton_producto{
+    font-family: var(--fuentePrincipal);
+    background-color: var(--blanco);
+    color: var(--primarioSecundario);
+    font-size: 1.6rem;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: #B9B9B9;
+    height: 4rem;
+    width: 7rem;
+    margin-left: 0.3rem;
+    
+}
+
+.boton_producto:hover{
+    cursor: pointer;
+    background: var(--blanco);
+    color: var(--primarioSecundario);
+    transition: background .6s ease; 
+    transition: color .6s ease; 
+    font-weight: bold;
+
+}
+
+.productos__precio{
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2081c3;
+}
+
+
+.productos_detalles__grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+
+.contenido__texto-posicion{
+   grid-column: 2/4;
+}
+
+
+.detalles_producto--tamaño{
+    font-size: 1.5rem;
+}
+
+.codigo-bg{
+    background-color: var(--blanco);
+    height: 40px;
+    border-width: 0.1rem;
+    border-style:solid;
+    border-color: var(--secundario);
+}
+.si-centrar{
+    text-align: center;
+}
+.detalles-bg{
+    background-color: var(--blanco);
+    height: 100px;
+    border-width: 0.1rem;
+    border-style:solid;
+    border-color: var(--secundario);
+}
+
+.adjunto-bg{
+    background-color: var(--blanco);
+    height: 80px;
+    border-width: 0.1rem;
+    border-style:solid;
+    border-color: var(--secundario);
+}
+
+.img__descripcion__productos{
+    max-width: 70%;
+    max-height: 100%;
+}
