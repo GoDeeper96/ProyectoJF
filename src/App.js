@@ -10,6 +10,11 @@ import Recetas from "./Pages/Recetas"
 import { sliderProductos } from "./Components/ProductosArrayImagenes";
 import ProductoDescripcion from "./Components/ProductoDescripcion";
 import ProductosxSeccion from "./Components/ProductosxSeccion";
+import PoliticasPrivacidad from "./Pages/PoliticasPrivacidad";
+import CambiosDevoluciones from "./Pages/CambiosDevoluciones";
+import TerminosCondiciones from "./Pages/TerminosCondiciones";
+import PoliticasCookies from "./Pages/PoliticasCookies";
+import LibroReclamaciones from "./Pages/LibroReclamaciones";
 function App() {
   return (
       <Router>
@@ -23,11 +28,11 @@ function App() {
               <Route path='/catalogo/:seccion'  element={<ProductosxSeccion />}/>
               <Route path=':producto' element={<ProductoDescripcion/>}/>
               <Route path='/recetas' element={<Recetas/>}/>
-              <Route path='/politicas-de-privacidad'  element={<Home/>}/>  
-              <Route path='/cambios-y-devoluciones'  element={<Home/>}/>  
-              <Route path='/terminos-y-condiciones'  element={<Home/>}/>  
-              <Route path='/politicas-de-cookies'  element={<Home/>}/>  
-              <Route path='/libro-de-reclamaciones'  element={<Home/>}/>  
+              <Route path='/politicas-de-privacidad'  element={<PoliticasPrivacidad/>}/>  
+              <Route path='/cambios-y-devoluciones'  element={<CambiosDevoluciones/>}/>  
+              <Route path='/terminos-y-condiciones'  element={<TerminosCondiciones/>}/>  
+              <Route path='/politicas-de-cookies'  element={<PoliticasCookies/>}/>  
+              <Route path='/libro-de-reclamaciones'  element={<LibroReclamaciones/>}/>   
               <Route path='*' element={<h1>Not Found</h1>}/>
           </Routes> 
           <Footer/>
