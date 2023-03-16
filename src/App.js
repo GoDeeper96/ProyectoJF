@@ -6,7 +6,10 @@ import Footer from "./Components/Footer";
 import Contacto from "./Pages/Contacto";
 import Noticias from "./Pages/Noticias"
 import Nosotros from "./Pages/Nosotros"
-import Recetas from "./Pages/Recetas"
+import RecetasGrupo from "./Pages/Recetas";
+import RecetaDescripcion from "./Components/RecetaDescripcion";
+import NoticiaDescripcion from "./Components/NoticiaDescripcion";
+import NoticiasGrupo from "./Pages/Noticias";
 import { sliderProductos } from "./Components/ProductosArrayImagenes";
 import ProductoDescripcion from "./Components/ProductoDescripcion";
 import ProductosxSeccion from "./Components/ProductosxSeccion";
@@ -20,14 +23,16 @@ function App() {
       <Router>
         <Navegador/>
           <Routes> 
-              <Route path='/' element={<Home/>}/>
+             <Route path='/' element={<Home/>}/>
               <Route path='/contacto'  element={<Contacto/>}/>
-              <Route path='/noticias'  element={<Noticias/>}/>                 
+              <Route path='/recetas' element={<RecetasGrupo/>}/>
+              <Route path='/recetas/:receta' element={<RecetaDescripcion/>}/>
+              <Route path='/noticias'  element={<NoticiasGrupo/>}/>      
+              <Route path='/noticias/:noticia'  element={<NoticiaDescripcion/>}/>                   
               <Route path='/nosotros'  element={<Nosotros/>}/>  
               <Route path='/catalogo'  element={<Catalogo_seccion />}/>
               <Route path='/catalogo/:seccion'  element={<ProductosxSeccion />}/>
               <Route path=':producto' element={<ProductoDescripcion/>}/>
-              <Route path='/recetas' element={<Recetas/>}/>
               <Route path='/politicas-de-privacidad'  element={<PoliticasPrivacidad/>}/>  
               <Route path='/cambios-y-devoluciones'  element={<CambiosDevoluciones/>}/>  
               <Route path='/terminos-y-condiciones'  element={<TerminosCondiciones/>}/>  
