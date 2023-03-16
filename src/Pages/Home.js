@@ -1,6 +1,6 @@
 import React, {useState,useRef, useEffect,useCallback} from 'react'
 import  styles  from './Home.module.css';
-import Slider_imagenes from '../Components/Slider_imagenes';
+import Slider_imagenes from '../Components/Slider_Imagenes';
 import SliderServicios from '../Components/Servicios_seccion'
 import Catalogo_seccion from '../Components/Catalogo_seccion';
 import { sliderImages } from '../Components/SlidersArrayImagenes'

@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className={styles.navegacion}>
         <Link to='/'className={styles.navegacion__enlace}>Inicio</Link>
         <Link to='/contacto' className={styles.navegacion__enlace} >Contacto</Link>
-        <Link to='/noticia' className={styles.navegacion__enlace} >Noticias</Link>
+        <Link to='/noticias' className={styles.navegacion__enlace} >Noticias</Link>
         <Link to='/nosotros' className={styles.navegacion__enlace} >¿Quienes somos?</Link>
         <Link to='/catalogo' className={styles.navegacion__enlace} >Catalago</Link>
         <Link to='/recetas' className={styles.navegacion__enlace} >Recetas</Link>       

@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Slider_imagenes.module.css'
+import styles from './Slider_Imagenes.module.css'
 
 import { sliderImages } from './SlidersArrayImagenes'
 const Slider_imagenes = (props ) => {
