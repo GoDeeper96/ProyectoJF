@@ -26,4 +26,4 @@ const RecetasGrupo = () => {
 
 export default RecetasGrupo;
 
-export default Recetas
+
