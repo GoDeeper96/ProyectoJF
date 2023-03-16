@@ -18,10 +18,12 @@ import CambiosDevoluciones from "./Pages/CambiosDevoluciones";
 import TerminosCondiciones from "./Pages/TerminosCondiciones";
 import PoliticasCookies from "./Pages/PoliticasCookies";
 import LibroReclamaciones from "./Pages/LibroReclamaciones";
+import SocialBar from "./Components/SocialBar";
 function App() {
   return (
       <Router>
         <Navegador/>
+        <SocialBar/>
           <Routes> 
              <Route path='/' element={<Home/>}/>
               <Route path='/contacto'  element={<Contacto/>}/>
