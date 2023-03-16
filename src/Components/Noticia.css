@@ -1,0 +1,29 @@
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.margin__arriba_bloque__lados__bloque{
+    margin-top: 5rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.noticias__grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+
+.noticias__nombre{
+    text-align: left;
+}
+
+.noticias__contenido{
+    font-size: 1.3rem;
+}
+
+.noticias__contenido__no__margin{
+    font-size: 1.3rem;
+    margin: 0;
+}

@@ -1,0 +1,32 @@
+.recetas__grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+
+.recetas__nombre{
+    text-align: left;
+}
+
+.recetas__contenido{
+    font-size: 1.3rem;
+}
+.noticias__contenido{
+    font-size: 1.3rem;
+}
+.recetas__contenido_no_margin{
+    font-size: 1.3rem;
+    margin:0
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+  .recetas__grid__margin_arriba_bloque_margin_lados_bloques
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    margin-top: 5rem;
+
+}
