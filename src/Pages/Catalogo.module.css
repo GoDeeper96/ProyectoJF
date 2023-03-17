@@ -1,34 +1,34 @@
 /* NAVBAR HISTORIAL */
 .navegacion_historial{
-    background-color: #EBEBEB;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+  background-color: #EBEBEB;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 .navegacion_historial__enlace{
-    font-family: var(--fuentePrincipal);
-    color: var(--primarioSecundario);
-    font-size: 1.1rem;
-    
+  font-family: var(--fuentePrincipal);
+  color: var(--primarioSecundario);
+  font-size: 1.1rem;
+  
 }
 
 .navegacion_historial__enlace_activo{
-    font-weight: bold;
-    font-family: var(--fuentePrincipal);
-    color: var(--primarioSecundario);
-    font-size: 1.1rem;
+  font-weight: bold;
+  font-family: var(--fuentePrincipal);
+  color: var(--primarioSecundario);
+  font-size: 1.1rem;
 }
 
 .p__navegación_historial{
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .no-margin{
-    margin: 0;
+  margin: 0;
 }
 
 .p__navegación_historial_no_margin{
-    font-size: 1.2rem;
-    margin: 0;
+  font-size: 1.2rem;
+  margin: 0;
 }
