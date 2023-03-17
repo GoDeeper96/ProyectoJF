@@ -5,7 +5,7 @@ import { Link, Outlet } from 'react-router-dom'
 const Receta = (props) => {
     return(
         <div>
-              <Link to={`/recetas/${props.nombre}`}>
+              <Link to={`/recetas/${props.nombreReceta}`}>
                 <img className="recetas__imagen" src={props.imagen} alt="receta1"/>
               </Link>
             <div className="recetas__informacion">

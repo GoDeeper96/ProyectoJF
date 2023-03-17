@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import  './ProductoDescripcion.css'
+import { Link } from 'react-router-dom'
 import {
     useParams,
   } from 'react-router-dom';
@@ -9,6 +10,15 @@ const ProductoDescripcion = () => {
   const productoObjeto = sliderProductos.find(product => product.nombreProducto === producto);
 
   return (
+    <div>
+        <div>
+                <nav className="navegacion_historial">
+                    <Link  to='/' className="navegacion_historial__enlace">Inicio</Link>
+                    <p className="p__navegación_historial_no_margin">{'>'}</p>
+                    <Link  to='#' className="navegacion_historial__enlace_activo">{productoObjeto.nombre}</Link>
+                </nav> 
+      </div>
+
     <main className="contenedor">
         <div className="productos_descripcion__grid margin-arriba_bloque margin--lados_bloques">
             <div className="si-centrar">
@@ -20,7 +30,7 @@ const ProductoDescripcion = () => {
                 <h4 className="productos_descripcion_subtitulo">Descripción</h4>
                 <p className="productos_descripcion_texto">{productoObjeto.descripcion}</p>
                 <div className="codigo-bg">
-                    <p className="no-margin margin-izquierda codigo__producto--texto">{productoObjeto.codigoID}</p>
+                    <p className="margin-izquierda codigo__producto--texto">{productoObjeto.codigoID}</p>
                 </div>
                 <hr/>
                 <p className="productos_tamaño_texto">Tamaño</p>
@@ -56,6 +66,7 @@ const ProductoDescripcion = () => {
 
         </div>
     </main>
+    </div>
   )
 }
 

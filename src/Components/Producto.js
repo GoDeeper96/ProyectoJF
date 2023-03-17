@@ -9,8 +9,8 @@ const Producto = (props) => {
 
   // `;
   return (
-    <>
-    <div className={styles.si_centrar} > 
+    <main>
+       <div className={styles.si_centrar} > 
                 <Link to={`/${props.nombreProducto}`}>
                   <img className={styles.recetas__imagen} src={props.url}/>
                 </Link>
@@ -22,8 +22,8 @@ const Producto = (props) => {
                     <p className={styles.productos__contenido}>{props.precio}</p>
                 </div>
 
-  </div>
-    </>
+        </div>
+    </main>
     
   )
 }
