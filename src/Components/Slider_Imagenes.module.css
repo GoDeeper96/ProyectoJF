@@ -32,3 +32,19 @@
     border-radius: 50%;
     cursor:pointer
 }
+
+@media (max-width: 768px){
+
+.contenedor__slider{
+        position: inherit;
+    }
+
+.slider{
+    position: inherit;
+}
+
+.slider__btn{
+    display: none;
+   }
+
+}
