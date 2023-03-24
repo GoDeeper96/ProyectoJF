@@ -80,7 +80,7 @@ const Slider_imagenes = (props ) => {
     <div className={styles.SupContainer}>
     <FlexRowStoreContent >
     <SwiperContentSection >
-        <SliderSwiper DistancePx={`${distancePx.toString()}px`} opacity={Opacity}>
+        <SliderSwiper className={styles.slider} DistancePx={`${distancePx.toString()}px`} opacity={Opacity}>
             
               {sliderImages.map(slider => <Slider ImageUrl={slider.img} ImageWidth={ImageWidth}/> )}
                 
