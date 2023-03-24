@@ -31,3 +31,4 @@ const Producto = (props) => {
     
   )
 }
+export default Producto

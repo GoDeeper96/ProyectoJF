@@ -1,5 +1,5 @@
 import React, {useState,useRef,useEffect} from 'react'
-import styles from './Slider_imagenes.module.css'
+import styles from './Slider_Imagenes.module.css'
 import styled from 'styled-components'
 import { sliderImages } from './SlidersArrayImagenes'
 import Slider from './Slider'
