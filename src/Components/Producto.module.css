@@ -1,12 +1,10 @@
-.contenedor{
-    max-width: 120rem;
-    margin: 0 auto;
-}
 .si_centrar{
     text-align: center;
+    
 }
 .recetas__imagen{
-    max-width: 100%;
+    max-width: 240px;
+    
 }
 .productos__nombre{
     font-size: 2rem;
@@ -15,7 +13,7 @@
     font-size: 2rem;
     font-weight: bold;
     color: #2081c3;
-    margin: 0;
+    
 }
 .no-margin{
     margin: 0;
