@@ -2,8 +2,7 @@ import React, {useState,useRef, useEffect,useCallback} from 'react'
 import Producto from './Producto'
 import styles from './CarouselProductos.module.css'
 import { sliderProductos } from './ProductosArrayImagenes'
-import styled from 'styled-components'
-import { secciones } from './SeccionesArray';
+import styled, { keyframes } from 'styled-components'
 const StyledArrowLeft = styled.i`
 & {
   box-sizing: border-box;
@@ -122,62 +121,66 @@ color:#001f3f;
   color: #AAAAAA;
 }
 `
-const Container = styled.div`
-
-  & {display: flex;
-  gap:4rem;
-  margin-top: 5rem;
-  margin-right: 2rem;
-  margin-left: 2rem;
-  touch-action: pan-y;
-  
-  }
-
+const FlexRowStoreContent = styled.div`
+ &{
+  display:flex;
+  box-sizing: border-box;
+ }
 `
-
-// const Rombos = (props) =>{
-//   const 
-// return(
-//   <div className={styles.rombos}>
-//   {sliderProductos.filter(producto=>producto.UltimoPd==true).map((producto,index)=> <StyledRhombus onClick={GiveCurrent(props.firstElement)}/>)}
-//   </div>
-// )
-// }
+const SwiperContentSection = styled.div`
+&{
+  touch-action:pan-y;
+  z-index:1;
+  padding:0;
+  overflow: hidden;
+  margin-left:auto;
+  mergin-right:auto;
+  list-style: none; 
+}
+`
+const FlexTheSwiper = styled.div`
+  display:flex;
+  z-index:1;
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  
+  transition: transform 200ms ease-in-out;
+  transform: translate3d(${props=>props.distancePx},0px,0px);
+  
+`
 const CarouselProductos = (props) => {
-  // const MyH1 = styled.h1`
-  // font-size: 4rem;
-  // transition: all s ease-out;
-  // &:hover{
-    
-  //   background-color:#db709380;
-  // }
-  // `
 const OriginalArray = sliderProductos.filter(producto=> producto.UltimoPd==true)
+const ori=sliderProductos.filter(producto=> producto.UltimoPd==true)
+const lastArray = ori.concat(OriginalArray)
 const timeRef = useRef(null);
 const [currentIndex, SetCurrentIndex] = useState(0);
-// const [initialScale, SetINitialScale] = useState(0);
-// const [transition, SetTransition] = useState(false);
+
+const [distancePx,SetDistancePx] = useState(0)
+
 const [productosDestacados, SetProductosDestacados] = useState(OriginalArray)
-// const [copyOfArray,SetCopy] = useState(productosDestacados);
-const DisplayNoContent = {
-  visibility: 'hidden',
-  display:'none'
-}
-const displayContent = {
-  visibility:'visible',
-  display:'block'
-}
+
+
 const Siguiente = useCallback(() => {
-  SetProductosDestacados([]);
-  const newShifted = productosDestacados.shift();
-   const newArray = productosDestacados.concat(newShifted)
-   console.log(newArray);
-  SetProductosDestacados(newArray);
 
-  // SetINitialScale(initialScale+270)
-  // SetTransition(true);
 
-},[productosDestacados])
+if(distancePx!==0&&distancePx!==-480){
+  console.log(distancePx)
+  SetDistancePx(distancePx-240)
+
+ }
+ else if(distancePx===0){
+  console.log(distancePx)
+  SetDistancePx(distancePx-240)
+ 
+ }
+ else{
+  SetDistancePx(0);
+ }
+ 
+},[distancePx])
+
 
 const Anterior = () =>{
   const isFirstSlide = currentIndex === 0;
@@ -208,14 +211,12 @@ const GiveCurrent = (producto,index) =>{
 useEffect(()=>{
   if(timeRef.current){
       clearTimeout(timeRef.current);
-      // SetTransition(false);
+      
   }
   timeRef.current = setTimeout(()=>{
-      Siguiente();
+      // Siguiente();
       
-      // SetSliderStyle(transition1)
-      // console.log(productosDestacados)
-  },5000)
+  },4000)
   return () => clearTimeout(timeRef.current);
 },[Siguiente])
 
@@ -224,15 +225,26 @@ useEffect(()=>{
     <div className={styles.SupContainer}>
     <h1>Productos Destacados</h1>
     
-    <Container >
-     {productosDestacados.slice(0,5).map(producto=>
-        <Producto nombreProducto={producto.nombreProducto} url={producto.img} nombre={producto.nombre} precio={producto.precio}/>)}
-    </Container>
+      <FlexRowStoreContent>
+        <SwiperContentSection>
+          <FlexTheSwiper distancePx={`${distancePx.toString()}px`}>
+     {productosDestacados.map(function(producto,index,array)
+      {
+        return(
+        <Producto 
+        goKey={index}
+          nombreProducto={producto.nombreProducto} 
+          url={producto.img} 
+          nombre={producto.nombre} 
+          precio={producto.precio}/>)
+        })}
+        </FlexTheSwiper>
+        </SwiperContentSection>
+        </FlexRowStoreContent>
     <div className={styles.ArrowSliders}>
     <StyledArrowLeft onClick={Anterior}/>
     <div className={styles.rombos}>
-        {/* <Rombos firstElement={productosDestacados[0]}/> */}
-        {OriginalArray.map((producto,index)=> <StyledRhombus onClick={()=>GiveCurrent(producto,index)}/>)}
+        {OriginalArray.map((producto,index)=> <StyledRhombus key={producto.seccion+index} onClick={()=>GiveCurrent(producto,index)}/>)}
         </div>
     <StyledArrowRight onClick={Siguiente}/>
     </div>
