@@ -3,6 +3,9 @@ import Producto from './Producto'
 import styles from './CarouselProductos.module.css'
 import { sliderProductos } from './ProductosArrayImagenes'
 import styled, { keyframes } from 'styled-components'
+
+var anchoVentana = window.innerWidth
+
 const StyledArrowLeft = styled.i`
 & {
   box-sizing: border-box;
@@ -155,82 +158,95 @@ const OriginalArray = sliderProductos.filter(producto=> producto.UltimoPd==true)
 const ori=sliderProductos.filter(producto=> producto.UltimoPd==true)
 const lastArray = ori.concat(OriginalArray)
 const timeRef = useRef(null);
+const [currentIndex, SetCurrentIndex] = useState(0);
 
 const [distancePx,SetDistancePx] = useState(0)
 
-const [productosDestacados, SetProductosDestacados] = useState(lastArray)
+const [productosDestacados, SetProductosDestacados] = useState(OriginalArray)
 
 
 const Siguiente = useCallback(() => {
 
+if(anchoVentana <=480){
 
-if(distancePx!==0&&distancePx!==-480){
-  console.log(distancePx)
-  SetDistancePx(distancePx-240)
-
- }
- else if(distancePx===0){
-  console.log(distancePx)
-  SetDistancePx(distancePx-240)
- 
- }
- else{
-  SetDistancePx(0);
- }
- 
-},[distancePx])
-
-
-const Anterior = () =>{
-  if(distancePx!==0&&distancePx!==480){
+  if(distancePx!==0&&distancePx!==-1440){
     console.log(distancePx)
-    SetDistancePx(distancePx+240)
+    SetDistancePx(distancePx-240)
   
+   }
+   else if(distancePx===0){
+    console.log(distancePx)
+    SetDistancePx(distancePx-240)
+   
    }
    else{
     SetDistancePx(0);
+   } 
+  }
+
+if(anchoVentana >480 && anchoVentana <=768){
+
+  if(distancePx!==0&&distancePx!==-960){
+    console.log(distancePx)
+    SetDistancePx(distancePx-240)
+  
    }
+   else if(distancePx===0){
+    console.log(distancePx)
+    SetDistancePx(distancePx-240)
+   
+   }
+   else{
+    SetDistancePx(0);
+   } 
+  }
+
+  if(anchoVentana >768){
+
+    if(distancePx!==0&&distancePx!==-480){
+      console.log(distancePx)
+      SetDistancePx(distancePx-240)
+    
+     }
+     else if(distancePx===0){
+      console.log(distancePx)
+      SetDistancePx(distancePx-240)
+     
+     }
+     else{
+      SetDistancePx(0);
+     } 
+    } 
+
+},[distancePx])
+
+
+
+
+const Anterior = () =>{
+  const isFirstSlide = currentIndex === 0;
+  const newIndex = isFirstSlide ? productosDestacados.length - 1 : currentIndex - 1;
+  SetCurrentIndex(newIndex);
 }
 const GiveCurrent = (producto,index) =>{
-  if(index===0){
-    SetDistancePx(0)
-  }
-  if(index===1){
-    SetDistancePx(-240)
-  }
-  if(index===2){
-    SetDistancePx(-480)
-  }
-  if(index===3){
-    SetDistancePx(-720)
-  }
-  if(index===4){
-    SetDistancePx(-960)
-  }
-  if(index===5){
-    SetDistancePx(-1200)
-  }
-  if(index===6){
-    SetDistancePx(-1440)
-  }
   // SetProductosDestacados([]);
-  // const currentProducto= producto;
-  // if(productosDestacados[0].nombre!==currentProducto)
-  // {
+  const currentProducto= producto;
+  if(productosDestacados[0].nombre!==currentProducto)
+  {
     
-  //   SetProductosDestacados([]);
-  //   if(index===OriginalArray.length)
-  //   {
-  //     return;
-  //   }
-  //   else{
-  //     const firstPart = OriginalArray.slice(index,7)
-  //     const IsThereRest = index === 0;
-  //     const newArray = IsThereRest? firstPart: firstPart.concat(OriginalArray.slice(0,index));
-  //     SetProductosDestacados(newArray);
-  //   }
+    SetProductosDestacados([]);
+    if(index===OriginalArray.length)
+    {
+      return;
+    }
+    else{
+      const firstPart = OriginalArray.slice(index,7)
+      const IsThereRest = index === 0;
+      const newArray = IsThereRest? firstPart: firstPart.concat(OriginalArray.slice(0,index));
+      SetProductosDestacados(newArray);
+    }
     
-  // }
+  }
 
 }
 useEffect(()=>{
@@ -239,7 +255,7 @@ useEffect(()=>{
       
   }
   timeRef.current = setTimeout(()=>{
-      Siguiente();
+      // Siguiente();
       
   },4000)
   return () => clearTimeout(timeRef.current);
@@ -247,6 +263,8 @@ useEffect(()=>{
 
 
   return (
+    <div className={styles.contenedor}>
+    <div  className={styles.marginIzquierda_Derecha}>
     <div className={styles.SupContainer}>
     <h1>Productos Destacados</h1>
     
@@ -272,6 +290,8 @@ useEffect(()=>{
         {OriginalArray.map((producto,index)=> <StyledRhombus key={producto.seccion+index} onClick={()=>GiveCurrent(producto,index)}/>)}
         </div>
     <StyledArrowRight onClick={Siguiente}/>
+    </div>
+    </div>
     </div>
     </div>
   )
